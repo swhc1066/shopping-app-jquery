@@ -23,9 +23,10 @@ $(document).ready(function () {
     function postItem() {
         var item = $('#list-imput').val();
         var work = '<p class="full-width no-strikethrough">'+ xMark + item + checkMark + '</p>';
-        $('#list-area').prepend(work);
+        $('#list-item').prepend(work);
         $('#add-items').val('');
-        $('#list-area p:first-child')
+        console.log("This posted");
+        /*$('#list-area p:first-child')
         .css('opacity', "0")
         .css("margin-top", "-20px")
         .animate(
@@ -35,18 +36,15 @@ $(document).ready(function () {
         .animate(
             {marginTop: "0px"},
             { queue: false, duration: 'slow' }
-        );
+        );*/
     }
 
-    function crossOff(){
-        $('.cross-off').toggle(function () {
-            $(this).closest('p').addClass("strikethrough");
-            console.log("Stricken")
-        }, function () {
-            $(this).closest('p').removeClass("active");
-        });
-    }
 
+/*Adds item to the purchased or added to cart list with green check*/
+    $("p.list-text").click(function(){
+        $(this).closest(".list-item").toggle(700);
+        console.log("Item add to cart");
+    });
 
 });
 
@@ -54,12 +52,12 @@ $(document).ready(function () {
 $(document).on("click", "#delete-icon", function(){
 	console.log("List cleared");
     $(".list-item").remove();
-    submissions = 0;
 });
 
 /*Allows user to delete items*/
-$(document).on("click", ".delete", function(){
-    $(this).closest('p').fadeOut(500);
+$(document).on("click", ".grey-delete-icon", function(){
+    console.log("item removed");
+    $(this).closest('.list-item').remove();
 });
 
 /*Allows user to check off items*/

@@ -512,6 +512,7 @@ p.list-text {
   height: 100px;
   background-color: #fff;
   border-bottom: 1px solid #c9e2e1; 
+  border-top: 1px solid #c9e2e1;
 }
 
 .list-data-added {
