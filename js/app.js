@@ -41,13 +41,14 @@ $(document).ready(function () {
 
 
 /*Adds item to the purchased or added to cart list with green check*/
-    $("p.list-text").click(function(){
-        $(this).closest(".list-item").toggle(700);
+    $(".list-data").click(function(){
+        $(this).toggleClass('list-item-added list-data-added list-text-added');    
         console.log("Item add to cart");
     });
 
 });
 
+    
 /*Clears all items on list*/
 $(document).on("click", "#delete-icon", function(){
 	console.log("List cleared");
