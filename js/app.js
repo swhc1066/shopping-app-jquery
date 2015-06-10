@@ -42,7 +42,14 @@ $(document).ready(function () {
 
 /*Adds item to the purchased or added to cart list with green check*/
     $(".list-data").click(function(){
-        $(this).toggleClass('list-item-added list-data-added list-text-added');    
+        var listData = $(this);
+        var listItem = listData.parent();
+        var listText = listData.find('p');
+        var greenCheck = listData.find('span:first')
+        $(listData).toggleClass('list-data-added');
+        $(listItem).toggleClass('list-item-added');
+        $(listText).toggleClass('list-text-added');   
+        $(greenCheck).toggleClass('green-added-icon');
         console.log("Item add to cart");
     });
 
